@@ -11,11 +11,17 @@ const sidesOfDice = {
 };
 
 const diceImg = ref("dice/rolling1.png");
+const rolling = ref(false);
 const history = ref([]);
+const sum = ref(0);
 const showHistory = ref(false);
 
 function rollDice() {
+  if (rolling.value) {
+    return
+  }
   // Calculate random dice number and set animation gif
+  rolling.value = true;
   let num = Math.floor(Math.random() * 6 + 1);
   diceImg.value = "dice/rolling.gif";
 
@@ -23,6 +29,8 @@ function rollDice() {
   setTimeout(() => {
     diceImg.value = sidesOfDice[num];
     history.value.push(num);
+    sum.value += num;
+    rolling.value = false;
   }, 1000);
 }
 
@@ -33,7 +41,9 @@ function toggleHistory() {
 
 <template>
   <h1>Dice Roller</h1>
-  <img :src="diceImg" @click="rollDice" id="dice" class="center" width="250" />
+  <p>A simple dice rolling app with hand drawn graphics.</p>
+  <p>By: Nick Dawson</p>
+  <img :src="diceImg" @click="rollDice" id="dice" :class="[rolling ? 'c-not-allowed' : 'c-pointer']" width="250" class="center" />
 
   <button @click="toggleHistory" class="center">
     {{ showHistory ? "Hide" : "Show" }} Roll History
@@ -47,11 +57,14 @@ function toggleHistory() {
       <td>{{ index + 1 }}</td>
       <td>{{ item }}</td>
     </tr>
+    <tr>
+      <td>Average: {{ (sum / history.length).toFixed(2) }}</td>
+    </tr>
   </table>
 </template>
 
 <style>
-h1 {
+h1, p {
   font-family: sans-serif;
   text-align: center;
 }
@@ -62,9 +75,15 @@ h1 {
   display: block;
 }
 
-#dice {
+.c-pointer {
   cursor: pointer;
 }
+
+.c-not-allowed {
+  cursor: not-allowed;
+}
+
+
 
 table,
 th,
