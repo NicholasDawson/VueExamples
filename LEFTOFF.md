@@ -1,0 +1,1 @@
+Was learning more about vue router, and was using router-test to see an example to transfer it over to the weather app
