@@ -4,7 +4,7 @@ const props = defineProps({
 })
 
 function getIcon() {
-  return `./weather-icons/${props.weather.icon}.png` 
+  return `weather-icons/${props.weather.icon}.png`
 }
 </script>
 
