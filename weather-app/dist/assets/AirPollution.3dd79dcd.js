@@ -1,0 +1,1 @@
+import{_ as o}from"./plugin-vue_export-helper.21dcd24c.js";import{o as e,c as t,a as r}from"./vendor.57e25490.js";const c={},n=r("h1",null,"Air Pollution",-1),s=[n];function a(_,l){return e(),t("div",null,s)}var f=o(c,[["render",a]]);export{f as default};

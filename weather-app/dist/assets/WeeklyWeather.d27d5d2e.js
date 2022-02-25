@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{o as t,c as o,a as r}from"./vendor.57e25490.js";const a={},c=r("h1",null,"Weekly Weather",-1),s=[c];function n(_,l){return t(),o("div",null,s)}var i=e(a,[["render",n]]);export{i as default};
