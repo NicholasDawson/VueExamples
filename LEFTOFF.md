@@ -1,1 +1,1 @@
-Was learning more about vue router, and was using router-test to see an example to transfer it over to the weather app
+Made current weather page responsive and looking nice!

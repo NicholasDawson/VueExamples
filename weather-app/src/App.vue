@@ -15,7 +15,7 @@ const geolocationErrorCode = ref(null);
 
 function reverseGeocoding() {
   const code = 'wWKOuHyqHm4/ozea94if3J/7ANBuncYjVsgqgtVAWFZ7BBXwPp9/8Q=='
-  let url = `https://nick-weather.azurewebsites.net/api/ReverseGeocodingAPI?lat=${latitude.value}&lon=${longitude.value}&code=${code}`;
+  let url = `${import.meta.env.VITE_API}/api/ReverseGeocodingAPI?lat=${latitude.value}&lon=${longitude.value}&code=${code}`;
     axios.get(url).then(res => {
       let properties = res.data.features[0].properties;
       city.value = properties.city;
@@ -44,7 +44,7 @@ onMounted(() => {
   <header>
     <Navigation />
   </header>
-  <main class="mx-3">
+  <main class="mx-3 mt-3">
     <GeolocationError :error="geolocationErrorCode" />
 
     <RouterView v-slot="{ Component }"
