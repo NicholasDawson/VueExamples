@@ -34,7 +34,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 v-if="props.city" class="text-center">Current Weather in {{ city }}, {{ state }}</h1>
+  <h1 v-if="props.city" class="text-center">Current Weather in {{ city }}<span v-if="props.state">, {{ state }}</span></h1>
 
   <div v-if="weather" class="container d-flex flex-md-row justify-content-center">
 
