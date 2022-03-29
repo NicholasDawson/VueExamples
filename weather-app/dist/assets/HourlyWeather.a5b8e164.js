@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{o,c as r,a as t}from"./vendor.57e25490.js";const a={},c=t("h1",null,"Hourly Weather",-1),s=[c];function n(_,l){return o(),r("div",null,s)}var i=e(a,[["render",n]]);export{i as default};

@@ -1,1 +1,0 @@
-Made current weather page responsive and looking nice!

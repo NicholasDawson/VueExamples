@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import CurrentWeather from '../views/CurrentWeather.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_BASE_URL),
+  history: createWebHashHistory(),
   linkActiveClass: 'active',
   routes: [
     {
@@ -24,6 +24,11 @@ const router = createRouter({
       path: '/air-pollution',
       name: 'airPollution',
       component: () => import('../views/AirPollution.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/About.vue')
     }
   ]
 })

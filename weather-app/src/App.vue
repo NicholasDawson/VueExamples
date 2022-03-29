@@ -62,5 +62,8 @@ onMounted(() => {
 </template>
 
 <style>
-
+footer {
+    position: relative;
+    bottom: 0;
+}
 </style>
